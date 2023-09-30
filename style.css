@@ -1,0 +1,275 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.navbar {
+    background-color: #007bff;
+}
+
+.navbar-brand {
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.navbar-nav .nav-link {
+    font-weight: 500;
+    color: #fff !important;
+}
+
+.jumbotron {
+    background-image: url('header-background.jpg');
+    background-size: cover;
+    color: #494646;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.jumbotron h1,
+.jumbotron p {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.jumbotron h1 {
+    font-size: 60px;
+}
+
+.btn-primary {
+    background-color: #333;
+    border-color: #333;
+    color: #fff;
+    font-size: 18px;
+    padding: 12px 24px;
+    border-radius: 5px;
+}
+
+.btn-primary:hover {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.img-fluid {
+    max-width: 100%;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.img-fluid:hover {
+    transform: scale(1.1);
+}
+
+.section {
+    padding: 50px 0;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.section:hover {
+    transform: scale(1.02);
+    background-color: #f7f7f7;
+}
+
+#contacto form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#contacto form label {
+    font-weight: 600;
+}
+
+#contacto form input[type="text"],
+#contacto form input[type="email"],
+#contacto form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+}
+
+#contacto form textarea {
+    height: 150px;
+}
+
+#contacto form button[type="submit"] {
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    padding: 12px 24px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+#contacto form button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.parallax {
+    background-image: url('parallax-background.jpg');
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+    padding: 100px 0;
+    transition: transform 0.3s ease-in-out;
+}
+
+.parallax:hover {
+    transform: scale(1.02);
+}
+
+.parallax h2,
+.parallax p {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.parallax h2 {
+    font-size: 48px;
+}
+
+footer {
+    background-color: #007bff;
+    color: #fff;
+    padding: 20px 0;
+    font-size: 20px;
+    text-align: center;
+}
+
+.fadeInUp {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 4.5s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(0px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.navbar-brand img {
+    max-height: 48px;
+    margin-right: 10px;
+}
+
+.section#quienes-somos .img-fluid {
+    max-width: 100px;
+    height: auto;
+    border-radius: 50%;
+    margin: 20px 0;
+}
+
+.section#quienes-somos p {
+    text-align: left;
+}
+
+.section {
+    margin-bottom: 40px;
+}
+
+.footer img.img-fluid {
+    max-width: 150px;
+    height: auto;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link,
+.btn-primary {
+    cursor: pointer;
+}
+
+.section#quienes-somos .img-fluid {
+    max-width: 100px;
+    height: auto;
+    border-radius: 50%;
+    margin: 20px 0;
+}
+
+.footer img.img-fluid {
+    max-width: 150px;
+    height: auto;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.img-adjusted {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.descargar-imagen {
+    max-width: 200px;
+    max-height: 150px;
+}
+
+.img-techsolutions-logo {
+    max-width: 80%;
+    height: auto;
+}
+
+.img-mision-vision {
+    max-width: 50%;
+    height: auto;
+    border-radius: 10px;
+}
+
+#mision,
+#vision {
+    text-align: center;
+}
+
+#mision .img-mision-vision,
+#vision .img-mision-vision {
+    max-width: 228px;
+    height: auto;
+    border-radius: 10px;
+    margin: 20px auto;
+}
+
+.centrar-contenido {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.producto-imagen {
+    max-width: 200px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.img-adjusted {
+    max-width: 200px;
+    height: auto;
+    border-radius: 10px;
+}
+
+#myCarousel {
+    max-width: 800px;
+    margin: 0 auto;
+}

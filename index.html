@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LedgerSoft - Descarga de Software</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <link rel="icon" href="favicon.png" type="image/png">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .navbar {
+            background-color: #007bff;
+        }
+
+        .navbar-brand {
+            font-size: 28px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .navbar-nav .nav-link {
+            font-weight: 500;
+            color: #fff !important;
+        }
+
+        .jumbotron {
+            background-image: url('header-background.jpg');
+            background-size: cover;
+            color: #494646;
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .jumbotron h1,
+        .jumbotron p {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .jumbotron h1 {
+            font-size: 60px;
+        }
+
+        .btn-primary {
+            background-color: #333;
+            border-color: #333;
+            color: #fff;
+            font-size: 18px;
+            padding: 12px 24px;
+            border-radius: 5px;
+        }
+
+        .btn-primary:hover {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .img-fluid {
+            max-width: 100%;
+            border-radius: 5px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .img-fluid:hover {
+            transform: scale(1.1);
+        }
+
+        .section {
+            padding: 50px 0;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+            transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+        }
+
+        .section:hover {
+            transform: scale(1.02);
+            background-color: #f7f7f7;
+        }
+
+        #contacto form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #contacto form label {
+            font-weight: 600;
+        }
+
+        #contacto form input[type="text"],
+        #contacto form input[type="email"],
+        #contacto form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-size: 16px;
+        }
+
+        #contacto form textarea {
+            height: 150px;
+        }
+
+        #contacto form button[type="submit"] {
+            background-color: #007bff;
+            border: none;
+            color: #fff;
+            padding: 12px 24px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+
+        #contacto form button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        .parallax {
+            background-image: url('parallax-background.jpg');
+            background-size: cover;
+            color: #fff;
+            text-align: center;
+            padding: 100px 0;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .parallax:hover {
+            transform: scale(1.02);
+        }
+
+        .parallax h2,
+        .parallax p {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .parallax h2 {
+            font-size: 48px;
+        }
+
+        footer {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px 0;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .fadeInUp {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 4.5s ease-out forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(0px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .navbar-brand img {
+            max-height: 48px;
+            margin-right: 10px;
+        }
+
+        .section#quienes-somos .img-fluid {
+            max-width: 100px;
+            height: auto;
+            border-radius: 50%;
+            margin: 20px 0;
+        }
+
+        .section#quienes-somos p {
+            text-align: left;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .footer img.img-fluid {
+            max-width: 150px;
+            height: auto;
+            border-radius: 5px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .navbar-nav .nav-link,
+        .btn-primary {
+            cursor: pointer;
+        }
+
+        .section#quienes-somos .img-fluid {
+            max-width: 100px;
+            height: auto;
+            border-radius: 50%;
+            margin: 20px 0;
+        }
+
+        .footer img.img-fluid {
+            max-width: 150px;
+            height: auto;
+            border-radius: 5px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .img-adjusted {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .descargar-imagen {
+            max-width: 200px;
+            max-height: 150px;
+        }
+
+        .img-techsolutions-logo {
+            max-width: 80%;
+            height: auto;
+        }
+
+        .img-mision-vision {
+            max-width: 50%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        #mision,
+        #vision {
+            text-align: center;
+        }
+
+        #mision .img-mision-vision,
+        #vision .img-mision-vision {
+            max-width: 228px;
+            height: auto;
+            border-radius: 10px;
+            margin: 20px auto;
+        }
+
+        .centrar-contenido {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .producto-imagen {
+            max-width: 200px;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        .img-adjusted {
+            max-width: 200px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        #myCarousel {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark" data-aos="fade-up">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="img/logo.png" alt="Logo de Ledgersoft" class="img-fluid logo-img">
+                Ledgersoft
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#descargar">Descargar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contacto">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="jumbotron" data-aos="fade-up">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1 class="display-4">Bienvenido a Ledgersoft</h1>
+                    <p class="lead">Brindando soluciones de software innovadoras para un mundo conectado.</p>
+                    <a class="btn btn-primary btn-lg" href="#descargar" role="button">Descargar Software</a>
+                </div>
+                <div class="col-md-6">
+                    <img src="img/techsolutions-logo.png" alt="Logo de TechSolutions" class="img-fluid img-techsolutions-logo">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Quiénes Somos -->
+    <section id="quienes-somos" class="section" data-aos="fade-up">
+        <div class="container">
+            <h2 class="mb-4 text-center">Quiénes Somos</h2>
+            <div class="row">
+                <!-- Persona 1 -->
+                <div class="col-md-6 text-center">
+                    <div class="d-flex justify-content-center">
+                        <img src="img/tu-imagen-circular1.jpg" alt="Foto de Juan Manuel López" class="img-fluid rounded-circle img-adjusted mx-auto" style="max-width: 210px;">
+                    </div>
+                    <h3 class="mt-2">Juan Manuel López Herrera</h3>
+                    <p class="mt-2 text-center">Técnico en Sistemas</p>
+                    <p class="mt-2 text-center"><a href="mailto:juanmanuelopez2024@gmail com">juanmanuelopez2024@gmail.com</a></p>
+                </div>
+                <div class="col-md-6 text-center">
+                    <div class="d-flex justify-content-center">
+                        <img src="img/tu-imagen-circular2.jpg" alt="Foto de Juan Sebastián López" class="img-fluid rounded-circle img-adjusted mx-auto" style="max-width: 210px;">
+                    </div>
+                    <h3 class="mt-2">Juan Sebastián López Herrera</h3>
+                    <p class="mt-2 text-center">Técnico en Sistemas</p> 
+                    <p class="mt-2 text-center"><a href="mailto:apteamofficial12@gmail.com">apteamofficial12@gmail.com</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Misión -->
+    <section id="mision" class="section" data-aos="fade-up">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 centrar-contenido">
+                    <h2 class="mb-4">Misión</h2>
+                    <p>Desarrollamos software contables especializados para pymes, en pleno cumplimiento con la normativa actual, ofreciendo calidad, seguridad y facilidad a nuestros clientes en la elaboración y presentación de estados financieros.</p>
+                </div>
+                <div class="col-md-6 text-center">
+                    <img src="img/imagen-mision.jpg" alt="Imagen de Misión" class="img-fluid img-mision-vision">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Visión -->
+    <section id="vision" class="section" data-aos="fade-up">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center">
+                    <img src="img/imagen-vision.jpg" alt="Imagen de Visión" class="img-fluid img-mision-vision">
+                </div>
+                <div class="col-md-6 centrar-contenido">
+                    <h2 class="mb-4">Visión</h2>
+                    <p>Para el año 2025, Ledgersoft se habrá consolidado en el mercado local como una distribuidora líder de software contable para pymes, destacándose por la excelente calidad y confianza.</p>
+                    <p style="font-style: italic; font-size: 18px; color: #007bff; animation: fadeInUp 1s; text-align: center;">"La mejor forma de predecir el futuro es crearlo"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Valores Corporativos -->
+        <section id="valores-corporativos" class="section" data-aos="fade-up">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <h2 class="mb-4">Valores Corporativos</h2>
+                    </div>
+                    <div class="col-md-3">
+                        <img src="img/logo-valor1.png" alt="Logo Valor 1" class="img-fluid">
+                        <h4>Excelencia</h4>
+                        <p>Comprometidos  con calidad y garantía</p>
+                    </div>
+                    <div class="col-md-3">
+                        <img src="img/logo-valor2.png" alt="Logo Valor 2" class="img-fluid">
+                        <h4>Liderazgo</h4>
+                        <p>Con nuestro conocimiento los guiaremos al camino.</p>
+                    </div>
+                    <div class="col-md-3">
+                        <img src="img/logo-valor3.png" alt="Logo Valor 3" class="img-fluid">
+                        <h4>Trabajo en equipo</h4>
+                        <p>Uno somos gota, juntos somos mar.</p>
+                    </div>
+                    <div class="col-md-3">
+                        <img src="img/logo-valor4.png" alt="Logo Valor 4" class="img-fluid">
+                        <h4>Dedicación</h4>
+                        <p>Para que nuestros clientes sean exitosos.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- Descripción del Problema -->
+    <section id="descripcion-problema" class="section" data-aos="fade-up">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center">
+                    <img src="img/imagen-descripcion-problema.jpg" alt="Imagen de Descripción del Problema" class="img-fluid img-mision-vision">
+                </div>
+                <div class="col-md-6">
+                    <h2 class="mb-4">Descripción del Problema</h2>
+                    <p>La gestión financiera en las pymes conlleva una falta de automatización y herramientas especializadas, dificultando enormemente esta tarea y lidiando con procesos que retrasan sus actividades. Ledgersoft ofrece una solución tecnológica innovadora que facilita de manera práctica el proceso financiero y legal, un desafío complejo y a menudo abrumador.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Carrusel de Imágenes -->
+    <section id="galeria" class="section" data-aos="fade-up">
+        <div class="container">
+            <h2 class="mb-4">Galería</h2>
+            <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+                <!-- Indicadores -->
+                <ol class="carousel-indicators">
+                    <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
+                    <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+                    <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+                </ol>
+
+                <!-- Imágenes del carrusel -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="img/foto1.jpg" alt="Foto 1" class="d-block w-100">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/foto2.jpg" alt="Foto 2" class="d-block w-100">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/foto3.jpg" alt="Foto 3" class="d-block w-100">
+                    </div>
+                </div>
+
+                <!-- Flechas de navegación -->
+                <a class="carousel-control-prev" href="#myCarousel" role="button" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </a>
+                <a class="carousel-control-next" href="#myCarousel" role="button" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Siguiente</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Videos -->
+    <section id="videos" class="section" data-aos="fade-up">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h2 class="mb-4">Videos</h2>
+                </div>
+                <div class="col-md-6">
+                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/TUuABsHYS6o" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="col-md-6">
+                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/VIDEO_ID2" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Descargar Software -->
+        <section id="descargar" class="section" data-aos="fade-up">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2 class="mb-4">Descargar Software</h2>
+                        <p>Descargue nuestro software contable de última generación y simplifique la gestión financiera de su pyme.</p>
+                        <a class="btn btn-primary btn-lg" href="#" role="button">Descargar Ahora</a>
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <img src="img/descargar-imagen.jpg" alt="Imagen de Descargar Software" class="img-fluid descargar-imagen">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Formulario de Contacto -->
+        <section id="contacto" class="section" data-aos="fade-up">
+            <div class="container">
+                <h2 class="mb-4">Contáctenos</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="img/imagen-contacto.png" alt="Imagen de Contacto" class="img-fluid">
+                    </div>
+                    <div class="col-md-6">
+                        <form>
+                            <div class="form-group">
+                                <label for="nombre">Nombre</label>
+                                <input type="text" class="form-control" id="nombre" placeholder="Su Nombre">
+                            </div>
+                            <div class="form-group">
+                                <label for="correo">Correo Electrónico</label>
+                                <input type="email" class="form-control" id="correo" placeholder="Su Correo Electrónico">
+                            </div>
+                            <div class="form-group">
+                                <label for="mensaje">Mensaje</label>
+                                <textarea class="form-control" id="mensaje" rows="5" placeholder="Su Mensaje"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer data-aos="fade-up">
+            <div class="container">
+                &copy; 2023 Ledgersoft. Todos los derechos reservados.
+            </div>
+        </footer>
+
+            <script>
+                var myCarousel = new bootstrap.Carousel(document.getElementById('myCarousel'), {
+                    interval: 1500,
+                    wrap: true, 
+                });
+            </script>
+        <script>
+            AOS.init({
+                duration: 1000,
+                easing: 'ease-in-out',
+                once: true,
+            });
+        </script>
+
+            
+    </body>
+    </html>
